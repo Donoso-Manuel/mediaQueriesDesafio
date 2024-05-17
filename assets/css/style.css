@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+}
+.navbar{
+    grid-area: navbar;
+    background-color: rgb(58, 58, 226);
+    color: white;
+}
+.iconoYTitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.filtro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+    grid-area: filtro;
+    text-align: center;
+    background-color: lightgray;
+}
+.opcionesFiltro{
+    padding: 0.25rem;
+    opacity: 0.6;
+    border-radius: 5px;
+}
+.grillaProducto{
+    grid-area: grillaProducto;
+    background-color: white;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid lightgray;
+    border-radius: 10px;
+    width: 300px;
+}
+.imagen img{
+    margin: 1rem;
+    width: 200px;
+    height: 200px;
+}
+.btnInformacion{
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    background-color: blue;
+}
+.paginas{
+    grid-area: paginas ;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numPaginas{
+    border: 0.5px solid lightgray;
+    padding: 0.25rem;
+    color: blue;
+}
+.footer{
+    grid-area: footer;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.redesSociales{
+    padding-bottom: 0.5rem;
+}
+@media(max-width: 576px){
+    .container{
+    display: grid;
+    grid-template-areas: 
+                'navbar'
+                'filtro'
+                'grillaProducto'
+                'paginas'
+                'footer';
+    grid-template-rows: 12vh 13vh 55vh 10vh 10vh;
+    }
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 1.25rem;
+    }
+    .iconoMenu{
+        margin-left: 14rem;
+    }
+    .menu{
+        display: none;
+    }
+    .grillaProducto{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        overflow-y: auto;
+    }
+}
+@media(min-width: 577px) and (max-width: 992px){
+    .container{
+        display: grid;
+        grid-template-areas: 
+                    'navbar navbar'
+                    'filtro grillaProducto'
+                    'filtro paginas'
+                    'footer footer';
+        grid-template-rows: 10vh 70vh 10vh 10vh;
+        grid-template-columns: 20vw 80vw;
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 1.25rem;
+        }
+        .iconoMenu{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            list-style: none;
+            margin-left: 7rem;
+        }
+        .menu li{
+            padding: 1rem;
+        }
+        .filtro{
+            justify-content: flex-start;
+            padding: 0 1.5rem;
+            padding-top: 1rem;
+        }
+        .grillaProducto{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            gap: 10px;
+            overflow-y: auto;
+            padding-top: 10px;
+        }    
+}
+@media(min-width: 993px){
+    .container{
+        display: grid;
+        grid-template-areas: 
+                    'navbar filtro'
+                    'navbar grillaProducto'
+                    'footer paginas';
+        grid-template-rows: 10vh 75vh 15vh;
+        grid-template-columns: 15vw 85vw;
+        }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        list-style: none;
+    }
+    .menu li{
+        padding: 0.75rem;
+    }
+    .iconoMenu{
+        display: none;
+    }
+    .grillaProducto{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 5px;
+        justify-items: center;
+        overflow-y: auto;
+        padding-top: 10px;
+    }    
+    .producto{
+        margin: 0.25rem;
+        width: 250px;
+    }
+    .imagen img{
+        width: 175px;
+        height: 175px;
+    }
+    .footer{
+        text-align: center;
+        padding: 0.25rem;
+    }
+}
+.opcionesFiltro:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+.btnInformacion:hover{
+    background-color: rgb(129, 194, 216);
+}
+.menu li:hover{
+    background-color: blue;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.numPaginas:hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
